@@ -4,8 +4,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6908762187006482" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 Secteurs les Plus Impactés par le CBAM en 2026 | Blog</title>
-<meta name="description" content="Un tour d'horizon des secteurs industriels les plus concernés par le Mécanisme d'Ajustement Carbone aux Frontières de l'UE.">
+<title>Blog | EU CBAM Calculator</title>
+<meta name="description" content="Les 5 secteurs les plus impactés par le CBAM en 2026 : acier, aluminium, ciment, engrais, hydrogène et électricité.">
 <link rel="canonical" href="https://maelysbussacm2b-byte.github.io/blog.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +19,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -37,55 +37,51 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">C</span> EU CBAM Calculator</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Calculateur CBAM</a><a href="/droits-de-douane.html">Droits de Douane</a><a href="/prix-carbone-ets.html">Prix Carbone ETS</a></div></div><a href="/guides.html">Guides</a><a href="/blog.html" class="active">Blog</a><a href="/about.html">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Calculateur CBAM</a><a href="/droits-de-douane.html" data-i18n="nav-tool2">Droits de Douane</a><a href="/prix-carbone-ets.html" data-i18n="nav-tool3">Prix Carbone ETS</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog" class="active">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <span class="eyebrow">Blog</span>
-  <h1>5 secteurs les plus impactés par le CBAM en 2026</h1>
-  <p>Le CBAM ne touche pas tous les importateurs de la même façon. Voici les secteurs où l'impact financier est le plus significatif aujourd'hui.</p>
-
-  <h2>1. Sidérurgie (acier)</h2>
-  <p>Secteur historiquement très émissif, l'acier importé fait partie des premiers produits couverts dès le lancement du dispositif.</p>
-
-  <h2>2. Aluminium</h2>
-  <p>La production d'aluminium primaire est particulièrement énergivore, ce qui se traduit par des coûts CBAM proportionnellement élevés.</p>
-
-  <h2>3. Ciment</h2>
-  <p>La fabrication du ciment dégage du CO2 à la fois par la combustion et par la réaction chimique elle-même, un double facteur d'émissions.</p>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <h2>4. Engrais</h2>
-  <p>La production d'engrais azotés repose sur des procédés à forte intensité énergétique, désormais concernés par le dispositif.</p>
-
-  <h2>5. Hydrogène et électricité</h2>
-  <p>Deux secteurs plus récemment intégrés, avec une méthodologie de calcul encore en affinement au niveau européen.</p>
-
-  <p><a class="cta" href="/">Estimer votre coût CBAM</a></p>
+<span class="eyebrow" data-i18n="eyebrow">Blog</span>
+<h1 data-i18n="h1">5 secteurs les plus impactés par le CBAM en 2026</h1>
+<p data-i18n="intro">Le CBAM ne touche pas tous les importateurs de la même façon. Voici les secteurs où l'impact financier est le plus significatif aujourd'hui.</p>
+<h2 data-i18n="h2-1">1. Sidérurgie (acier)</h2>
+<p data-i18n="p1">Secteur historiquement très émissif, l'acier importé fait partie des premiers produits couverts dès le lancement du dispositif.</p>
+<h2 data-i18n="h2-2">2. Aluminium</h2>
+<p data-i18n="p2">La production d'aluminium primaire est particulièrement énergivore, ce qui se traduit par des coûts CBAM proportionnellement élevés.</p>
+<h2 data-i18n="h2-3">3. Ciment</h2>
+<p data-i18n="p3">La fabrication du ciment dégage du CO2 à la fois par la combustion et par la réaction chimique elle-même, un double facteur d'émissions.</p>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<h2 data-i18n="h2-4">4. Engrais</h2>
+<p data-i18n="p4">La production d'engrais azotés repose sur des procédés à forte intensité énergétique, désormais concernés par le dispositif.</p>
+<h2 data-i18n="h2-5">5. Hydrogène et électricité</h2>
+<p data-i18n="p5">Deux secteurs plus récemment intégrés, avec une méthodologie de calcul encore en affinement au niveau européen.</p>
+<p><a class="cta" href="/" data-i18n="cta">Estimer votre coût CBAM</a></p>
 </main>
 <footer>
-  <div class="wrap">© EU CBAM Calculator</div>
+  <div class="wrap">&copy; EU CBAM Calculator</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Calculateur CBAM", "nav-tool2": "Droits de Douane", "nav-tool3": "Prix Carbone ETS", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "eyebrow": "Blog", "h1": "5 secteurs les plus impactés par le CBAM en 2026", "intro": "Le CBAM ne touche pas tous les importateurs de la même façon. Voici les secteurs où l'impact financier est le plus significatif aujourd'hui.", "h2-1": "1. Sidérurgie (acier)", "p1": "Secteur historiquement très émissif, l'acier importé fait partie des premiers produits couverts dès le lancement du dispositif.", "h2-2": "2. Aluminium", "p2": "La production d'aluminium primaire est particulièrement énergivore, ce qui se traduit par des coûts CBAM proportionnellement élevés.", "h2-3": "3. Ciment", "p3": "La fabrication du ciment dégage du CO2 à la fois par la combustion et par la réaction chimique elle-même, un double facteur d'émissions.", "h2-4": "4. Engrais", "p4": "La production d'engrais azotés repose sur des procédés à forte intensité énergétique, désormais concernés par le dispositif.", "h2-5": "5. Hydrogène et électricité", "p5": "Deux secteurs plus récemment intégrés, avec une méthodologie de calcul encore en affinement au niveau européen.", "cta": "Estimer votre coût CBAM", "_title": "Blog | EU CBAM Calculator", "_desc": "Les 5 secteurs les plus impactés par le CBAM en 2026 : acier, aluminium, ciment, engrais, hydrogène et électricité."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "CBAM Calculator", "nav-tool2": "Customs Duty", "nav-tool3": "ETS Carbon Price", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "eyebrow": "Blog", "h1": "5 Sectors Most Impacted by CBAM in 2026", "intro": "CBAM doesn't affect all importers the same way. Here are the sectors where the financial impact is most significant today.", "h2-1": "1. Steel", "p1": "A historically high-emission sector, imported steel is among the first products covered since the mechanism launched.", "h2-2": "2. Aluminium", "p2": "Primary aluminium production is particularly energy-intensive, translating into proportionally high CBAM costs.", "h2-3": "3. Cement", "p3": "Cement manufacturing releases CO2 both through combustion and the chemical reaction itself, a double emissions factor.", "h2-4": "4. Fertilizers", "p4": "Nitrogen fertilizer production relies on highly energy-intensive processes, now covered by the mechanism.", "h2-5": "5. Hydrogen and Electricity", "p5": "Two more recently integrated sectors, with a calculation methodology still being refined at the European level.", "cta": "Estimate your CBAM cost", "_title": "Blog | EU CBAM Calculator", "_desc": "The 5 sectors most impacted by CBAM in 2026: steel, aluminium, cement, fertilizers, hydrogen and electricity."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Derechos de Aduana", "nav-tool3": "Precio Carbono ETS", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "eyebrow": "Blog", "h1": "5 sectores más impactados por el CBAM en 2026", "intro": "El CBAM no afecta a todos los importadores por igual. Estos son los sectores con mayor impacto financiero hoy.", "h2-1": "1. Siderurgia (acero)", "p1": "Sector históricamente muy emisor, el acero importado está entre los primeros productos cubiertos desde el lanzamiento del dispositivo.", "h2-2": "2. Aluminio", "p2": "La producción de aluminio primario es particularmente intensiva en energía, lo que se traduce en costes CBAM proporcionalmente altos.", "h2-3": "3. Cemento", "p3": "La fabricación de cemento emite CO2 tanto por la combustión como por la propia reacción química, un doble factor de emisiones.", "h2-4": "4. Fertilizantes", "p4": "La producción de fertilizantes nitrogenados se basa en procesos de alta intensidad energética, ahora cubiertos por el dispositivo.", "h2-5": "5. Hidrógeno y electricidad", "p5": "Dos sectores integrados más recientemente, con una metodología de cálculo aún en proceso de afinamiento a nivel europeo.", "cta": "Estima tu coste CBAM", "_title": "Blog | EU CBAM Calculator", "_desc": "Los 5 sectores más impactados por el CBAM en 2026: acero, aluminio, cemento, fertilizantes, hidrógeno y electricidad."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Direitos Alfandegários", "nav-tool3": "Preço Carbono ETS", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "eyebrow": "Blog", "h1": "5 setores mais impactados pelo CBAM em 2026", "intro": "O CBAM não afeta todos os importadores da mesma forma. Estes são os setores com maior impacto financeiro hoje.", "h2-1": "1. Siderúrgica (aço)", "p1": "Setor historicamente muito emissor, o aço importado está entre os primeiros produtos abrangidos desde o lançamento do dispositivo.", "h2-2": "2. Alumínio", "p2": "A produção de alumínio primário é particularmente intensiva em energia, resultando em custos CBAM proporcionalmente altos.", "h2-3": "3. Cimento", "p3": "A fabricação de cimento libera CO2 tanto pela combustão quanto pela própria reação química, um duplo fator de emissões.", "h2-4": "4. Fertilizantes", "p4": "A produção de fertilizantes nitrogenados depende de processos de alta intensidade energética, agora abrangidos pelo dispositivo.", "h2-5": "5. Hidrogênio e eletricidade", "p5": "Dois setores integrados mais recentemente, com metodologia de cálculo ainda em refinamento a nível europeu.", "cta": "Estime seu custo CBAM", "_title": "Blog | EU CBAM Calculator", "_desc": "Os 5 setores mais impactados pelo CBAM em 2026: aço, alumínio, cimento, fertilizantes, hidrogênio e eletricidade."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "CBAM कैलकुलेटर", "nav-tool2": "सीमा शुल्क", "nav-tool3": "ETS कार्बन मूल्य", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "eyebrow": "ब्लॉग", "h1": "2026 में CBAM से सबसे अधिक प्रभावित 5 क्षेत्र", "intro": "CBAM सभी आयातकर्ताओं को एक समान रूप से प्रभावित नहीं करता। यहां वे क्षेत्र हैं जहां आज वित्तीय प्रभाव सबसे अधिक है।", "h2-1": "1. इस्पात (स्टील)", "p1": "एतिहासिक रूप से उच्च-उत्सर्जन क्षेत्र, आयातित स्टील इस तंत्र के शुरू से ही सबसे पहले शामिल उत्पादों में से एक है।", "h2-2": "2. एल्यूमिनियम", "p2": "प्राथमिक एल्यूमिनियम उत्पादन विशेष रूप से ऊर्जा-गहन है, जिससे अनुपातिक रूप से उच्च CBAM लागत आती है।", "h2-3": "3. सीमेंट", "p3": "सीमेंट निर्माण दहन और रासायनिक प्रतिक्रिया दोनों से CO2 छोड़ता है, दोहरा उत्सर्जन कारक।", "h2-4": "4. उर्वरक", "p4": "नाइट्रोजन उर्वरक उत्पादन उच्च-ऊर्जा प्रक्रियाओं पर निर्भर है, जो अब इस तंत्र से कवर हैं।", "h2-5": "5. हाइड्रोजन और बिजली", "p5": "दो हाल ही में शामिल किए गए क्षेत्र, जिनकी गणना पद्धति यूरोपीय स्तर पर अभी भी परिष्कृत हो रही है।", "cta": "अपनी CBAM लागत का अनुमान लगाएं", "_title": "ब्लॉग | EU CBAM Calculator", "_desc": "2026 में CBAM से सबसे अधिक प्रभावित 5 क्षेत्र: स्टील, एल्यूमिनियम, सीमेंट, उर्वरक, हाइड्रोजन और बिजली।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "حاسبة CBAM", "nav-tool2": "الرسوم الجمركية", "nav-tool3": "سعر الكربون ETS", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "eyebrow": "المدونة", "h1": "5 قطاعات الأكثر تأثرًا بـ CBAM في 2026", "intro": "لا يؤثر CBAM على جميع المستوردين بنفس الطريقة. إليك القطاعات ذات التأثير المالي الأكبر اليوم.", "h2-1": "1. الصلب", "p1": "قطاع مرتفع الانبعاثات تاريخيًا، الصلب المستورد من أول المنتجات المشمولة منذ إطلاق الآلية.", "h2-2": "2. الألمنيوم", "p2": "إنتاج الألمنيوم الأولي كثيف الاستهلاك للطاقة بشكل خاص، ما يؤدي إلى تكاليف CBAM مرتفعة نسبيًا.", "h2-3": "3. الأسمنت", "p3": "تصنيع الأسمنت يطلق ثاني أكسيد الكربون من الاحتراق ومن التفاعل الكيميائي ذاته، عامل انبعاث مزدوج.", "h2-4": "4. الأسمدة", "p4": "يعتمد إنتاج الأسمدة النيتروجينية على عمليات كثيفة الاستهلاك للطاقة، وهي مشمولة الآن بالآلية.", "h2-5": "5. الهيدروجين والكهرباء", "p5": "قطاعان أدرجا مؤخرًا، ولا تزال منهجية الحساب قيد التطوير على المستوى الأوروبي.", "cta": "قدّر تكلفة CBAM الخاصة بك", "_title": "المدونة | EU CBAM Calculator", "_desc": "القطاعات الخمس الأكثر تأثرًا بـ CBAM في 2026: الصلب، الألمنيوم، الأسمنت، الأسمدة، الهيدروجين والكهرباء."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
