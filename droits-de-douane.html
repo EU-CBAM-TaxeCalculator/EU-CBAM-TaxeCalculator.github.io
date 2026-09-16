@@ -5,132 +5,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculateur de Droits de Douane Gratuit | EU CBAM Calculator</title>
-<meta name="description" content="Estime les droits de douane et la TVA à l'importation dus sur une marchandise entrant dans l'Union Européenne, à partir de sa valeur en douane et de son taux tarifaire.">
+<meta name="description" content="Estime les droits de douane et la TVA à l'importation dus sur une marchandise entrant dans l'Union Européenne.">
 <link rel="canonical" href="https://maelysbussacm2b-byte.github.io/droits-de-douane.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur de Droits de Douane","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
-</script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
-    --paper: #ffffff; --card: #eef4f0; --card-border: #d7e5df;
-    --accent: #2f6e52; --accent-dark: #164f3c;
-    --line: #e2e5e9;
-  }
-  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
-  .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
-  .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-  nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
-  nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-  nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .hero { text-align: center; padding: 40px 0 10px; }
-  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-  .lede { color: var(--ink-soft); font-size: 1rem; max-width: 520px; margin: 0 auto; }
-  .tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
-  .row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
-  input { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; width: 100%; }
-  .btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
-  .btn:hover { background: var(--accent-dark); }
-  .result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
-  .result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
-  .result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
-  .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
-  .faq { margin: 44px 0; }
-  .faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
-  .faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
-  .faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
-  footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+  --paper: #ffffff; --card: #eef4f0; --card-border: #d7e5df;
+  --accent: #2f6e52; --accent-dark: #164f3c;
+  --line: #e2e5e9;
+}
+body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+.header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+.logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
+nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
+main { padding: 40px 0 60px; }
+.eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; display: block; }
+h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 16px; }
+h2 { font-size: 1.08rem; font-weight: 700; margin: 26px 0 8px; }
+p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
+.lede { max-width: 540px; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 10px; }
+.tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
+.tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
+.tool-card p { font-size: 0.85rem; margin: 0; }
+.ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
+.card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+.card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
+a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
+footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
+
+.hero { text-align: center; padding: 40px 0 10px; }
+.tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
+.row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
+input { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; width: 100%; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
+.btn:hover { background: var(--accent-dark); }
+.result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
+.result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
+.result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
+.faq { margin: 44px 0; }
+.faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
+.faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">C</span> EU CBAM Calculator</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Calculateur CBAM</a>
-          <a href="/droits-de-douane.html">Droits de Douane</a>
-          <a href="/prix-carbone-ets.html">Prix Carbone ETS</a>
-        </div>
-      </div>
-      <a href="/guides.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Calculateur CBAM</a><a href="/droits-de-douane.html" data-i18n="nav-tool2">Droits de Douane</a><a href="/prix-carbone-ets.html" data-i18n="nav-tool3">Prix Carbone ETS</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
-
 <main class="wrap">
-  <div class="hero">
-    <h1>Calculateur de Droits de Douane</h1>
-    <p class="lede">Estime les droits de douane et la TVA à payer sur une importation dans l'Union Européenne.</p>
+<div class="hero">
+  <h1 data-i18n="h1">Calculateur de Droits de Douane</h1>
+  <p class="lede" data-i18n="lede">Estime les droits de douane et la TVA à payer sur une importation dans l'Union Européenne.</p>
+</div>
+<div class="tool-zone">
+  <div class="row"><label data-i18n="label-value">Valeur en douane de la marchandise (€)</label><input type="number" id="value" value="10000" step="0.01"></div>
+  <div class="row"><label data-i18n="label-duty">Taux de droit de douane (%)</label><input type="number" id="duty" value="4.5" step="0.1"></div>
+  <div class="row"><label data-i18n="label-vat">Taux de TVA à l'importation (%)</label><input type="number" id="vat" value="20" step="0.1"></div>
+  <button class="btn" data-i18n="btn" onclick="calc()">Calculer</button>
+  <div class="result-box" id="result" style="display:none;">
+    <div class="line"><span data-i18n="r-duty-label">Droits de douane</span><span id="r-duty">—</span></div>
+    <div class="line"><span data-i18n="r-base-label">Base TVA (valeur + droits)</span><span id="r-base">—</span></div>
+    <div class="line"><span data-i18n="r-vat-label">TVA à l'importation</span><span id="r-vat">—</span></div>
+    <div class="line total"><span data-i18n="r-total-label">Coût total à l'importation</span><span id="r-total">—</span></div>
   </div>
-
-  <div class="tool-zone">
-    <div class="row">
-      <label>Valeur en douane de la marchandise (€)</label>
-      <input type="number" id="value" value="10000" step="0.01">
-    </div>
-    <div class="row">
-      <label>Taux de droit de douane (%)</label>
-      <input type="number" id="duty" value="4.5" step="0.1">
-    </div>
-    <div class="row">
-      <label>Taux de TVA à l'importation (%)</label>
-      <input type="number" id="vat" value="20" step="0.1">
-    </div>
-    <button class="btn" onclick="calc()">Calculer</button>
-    <div class="result-box" id="result" style="display:none;">
-      <div class="line"><span>Droits de douane</span><span id="r-duty">—</span></div>
-      <div class="line"><span>Base TVA (valeur + droits)</span><span id="r-base">—</span></div>
-      <div class="line"><span>TVA à l'importation</span><span id="r-vat">—</span></div>
-      <div class="line total"><span>Coût total à l'importation</span><span id="r-total">—</span></div>
-    </div>
-  </div>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-      <h3>Qu'est-ce que la valeur en douane ?</h3>
-      <p>C'est généralement le prix payé pour la marchandise, augmenté du transport et de l'assurance jusqu'à la frontière de l'UE (valeur CIF).</p>
-    </div>
-    <div class="faq-item">
-      <h3>Comment connaître le taux de droit applicable ?</h3>
-      <p>Le taux dépend du code tarifaire (nomenclature combinée) du produit et de son pays d'origine — consultez la base Taric de l'UE pour le taux exact.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Ce calcul concerne-t-il aussi le CBAM ?</h3>
-      <p>Non, ce simulateur couvre les droits de douane et la TVA classiques. Pour les produits soumis au mécanisme carbone aux frontières, utilisez notre <a href="/" style="color:var(--accent-dark);">calculateur CBAM</a>.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© EU CBAM Calculator</div>
-</footer>
-
+</div>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<section class="faq">
+  <h2 data-i18n="faq-h2">Questions fréquentes</h2>
+  <div class="faq-item"><h3 data-i18n="faq1-q">Qu'est-ce que la valeur en douane&nbsp;?</h3><p data-i18n="faq1-a">C'est généralement le prix payé pour la marchandise, augmenté du transport et de l'assurance jusqu'à la frontière de l'UE (valeur CIF).</p></div>
+  <div class="faq-item"><h3 data-i18n="faq2-q">Comment connaître le taux de droit applicable&nbsp;?</h3><p data-i18n="faq2-a">Le taux dépend du code tarifaire (nomenclature combinée) du produit et de son pays d'origine — consultez la base Taric de l'UE pour le taux exact.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq3-q">Ce calcul concerne-t-il aussi le CBAM&nbsp;?</h3><p data-i18n="faq3-a">Non, ce simulateur couvre les droits de douane et la TVA classiques. Pour les produits soumis au mécanisme carbone aux frontières, utilisez notre calculateur CBAM.</p></div>
+</section>
 <script>
 function calc() {
   const value = parseFloat(document.getElementById('value').value) || 0;
@@ -147,5 +116,11 @@ function calc() {
   document.getElementById('result').style.display = 'block';
 }
 </script>
+</main>
+<footer>
+  <div class="wrap">&copy; EU CBAM Calculator</div>
+</footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Calculateur CBAM", "nav-tool2": "Droits de Douane", "nav-tool3": "Prix Carbone ETS", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Calculateur de Droits de Douane", "lede": "Estime les droits de douane et la TVA à payer sur une importation dans l'Union Européenne.", "label-value": "Valeur en douane de la marchandise (€)", "label-duty": "Taux de droit de douane (%)", "label-vat": "Taux de TVA à l'importation (%)", "btn": "Calculer", "r-duty-label": "Droits de douane", "r-base-label": "Base TVA (valeur + droits)", "r-vat-label": "TVA à l'importation", "r-total-label": "Coût total à l'importation", "faq-h2": "Questions fréquentes", "faq1-q": "Qu'est-ce que la valeur en douane ?", "faq1-a": "C'est généralement le prix payé pour la marchandise, augmenté du transport et de l'assurance jusqu'à la frontière de l'UE (valeur CIF).", "faq2-q": "Comment connaître le taux de droit applicable ?", "faq2-a": "Le taux dépend du code tarifaire (nomenclature combinée) du produit et de son pays d'origine — consultez la base Taric de l'UE pour le taux exact.", "faq3-q": "Ce calcul concerne-t-il aussi le CBAM ?", "faq3-a": "Non, ce simulateur couvre les droits de douane et la TVA classiques. Pour les produits soumis au mécanisme carbone aux frontières, utilisez notre calculateur CBAM.", "_title": "Calculateur de Droits de Douane Gratuit | EU CBAM Calculator", "_desc": "Estime les droits de douane et la TVA à l'importation dus sur une marchandise entrant dans l'Union Européenne."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "CBAM Calculator", "nav-tool2": "Customs Duty", "nav-tool3": "ETS Carbon Price", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Customs Duty Calculator", "lede": "Estimates the customs duty and VAT due on an import into the European Union.", "label-value": "Customs value of the goods (€)", "label-duty": "Customs duty rate (%)", "label-vat": "Import VAT rate (%)", "btn": "Calculate", "r-duty-label": "Customs duty", "r-base-label": "VAT base (value + duty)", "r-vat-label": "Import VAT", "r-total-label": "Total import cost", "faq-h2": "Frequently asked questions", "faq1-q": "What is the customs value?", "faq1-a": "It is generally the price paid for the goods, plus transport and insurance to the EU border (CIF value).", "faq2-q": "How do I find the applicable duty rate?", "faq2-a": "The rate depends on the product's tariff code (combined nomenclature) and country of origin — check the EU's Taric database for the exact rate.", "faq3-q": "Does this calculation also cover CBAM?", "faq3-a": "No, this simulator covers standard customs duty and VAT. For products subject to the carbon border mechanism, use our CBAM calculator.", "_title": "Free Customs Duty Calculator | EU CBAM Calculator", "_desc": "Estimate the customs duty and import VAT due on goods entering the European Union."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Derechos de Aduana", "nav-tool3": "Precio Carbono ETS", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Calculadora de Derechos de Aduana", "lede": "Estima los derechos de aduana y el IVA a pagar en una importación a la Unión Europea.", "label-value": "Valor en aduana de la mercancía (€)", "label-duty": "Tasa de derecho de aduana (%)", "label-vat": "Tasa de IVA de importación (%)", "btn": "Calcular", "r-duty-label": "Derechos de aduana", "r-base-label": "Base IVA (valor + derechos)", "r-vat-label": "IVA de importación", "r-total-label": "Coste total de importación", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Qué es el valor en aduana?", "faq1-a": "Es generalmente el precio pagado por la mercancía, más el transporte y el seguro hasta la frontera de la UE (valor CIF).", "faq2-q": "¿Cómo conocer la tasa de derecho aplicable?", "faq2-a": "La tasa depende del código arancelario (nomenclatura combinada) del producto y de su país de origen — consulta la base Taric de la UE para la tasa exacta.", "faq3-q": "¿Este cálculo también cubre el CBAM?", "faq3-a": "No, este simulador cubre los derechos de aduana y el IVA clásicos. Para productos sujetos al mecanismo de ajuste en frontera por carbono, usa nuestra calculadora CBAM.", "_title": "Calculadora Gratuita de Derechos de Aduana | EU CBAM Calculator", "_desc": "Estima los derechos de aduana y el IVA de importación adeudados por una mercancía que entra en la Unión Europea."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Direitos Alfandegários", "nav-tool3": "Preço Carbono ETS", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Calculadora de Direitos Alfandegários", "lede": "Estima os direitos alfandegários e o IVA devidos numa importação para a União Europeia.", "label-value": "Valor aduaneiro da mercadoria (€)", "label-duty": "Taxa de direito alfandegário (%)", "label-vat": "Taxa de IVA de importação (%)", "btn": "Calcular", "r-duty-label": "Direitos alfandegários", "r-base-label": "Base IVA (valor + direitos)", "r-vat-label": "IVA de importação", "r-total-label": "Custo total de importação", "faq-h2": "Perguntas frequentes", "faq1-q": "O que é o valor aduaneiro?", "faq1-a": "É geralmente o preço pago pela mercadoria, mais o transporte e o seguro até a fronteira da UE (valor CIF).", "faq2-q": "Como saber a taxa de direito aplicável?", "faq2-a": "A taxa depende do código tarifário (nomenclatura combinada) do produto e do seu país de origem — consulte a base Taric da UE para a taxa exata.", "faq3-q": "Este cálculo também cobre o CBAM?", "faq3-a": "Não, este simulador cobre direitos alfandegários e IVA clássicos. Para produtos sujeitos ao mecanismo de ajuste de fronteira de carbono, use nossa calculadora CBAM.", "_title": "Calculadora Gratuita de Direitos Alfandegários | EU CBAM Calculator", "_desc": "Estime os direitos alfandegários e o IVA de importação devidos por uma mercadoria que entra na União Europeia."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "CBAM कैलकुलेटर", "nav-tool2": "सीमा शुल्क", "nav-tool3": "ETS कार्बन मूल्य", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "सीमा शुल्क कैलकुलेटर", "lede": "यूरोपीय संघ में आयात पर देय सीमा शुल्क और VAT का अनुमान लगाता है।", "label-value": "वस्तु का सीमा मूल्य (€)", "label-duty": "सीमा शुल्क दर (%)", "label-vat": "आयात VAT दर (%)", "btn": "गणना करें", "r-duty-label": "सीमा शुल्क", "r-base-label": "VAT आधार (मूल्य + शुल्क)", "r-vat-label": "आयात VAT", "r-total-label": "कुल आयात लागत", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "सीमा मूल्य क्या है?", "faq1-a": "यह आमतौर पर वस्तु के लिए भुगतान की गई कीमत प्लस यूरोपीय संघ की सीमा तक परिवहन और बीमा (CIF मूल्य) होती है।", "faq2-q": "लागू शुल्क दर कैसे पता करें?", "faq2-a": "दर उत्पाद के टैरिफ़ कोड और मूल देश पर निर्भर करती है — सटीक दर के लिए EU का Taric डेटाबेस देखें।", "faq3-q": "क्या यह गणना CBAM को भी शामिल करती है?", "faq3-a": "नहीं, यह सिमुलेटर मानक सीमा शुल्क और VAT को कवर करता है। CBAM के अधीन उत्पादों के लिए हमारा CBAM कैलकुलेटर उपयोग करें।", "_title": "मुफ़्त सीमा शुल्क कैलकुलेटर | EU CBAM Calculator", "_desc": "यूरोपीय संघ में प्रवेश करने वाली वस्तु पर देय सीमा शुल्क और आयात VAT का अनुमान लगाएं।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "حاسبة CBAM", "nav-tool2": "الرسوم الجمركية", "nav-tool3": "سعر الكربون ETS", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "حاسبة الرسوم الجمركية", "lede": "تقدر الرسوم الجمركية وضريبة القيمة المضافة المستحقة على واردات إلى الاتحاد الأوروبي.", "label-value": "القيمة الجمركية للبضائع (€)", "label-duty": "نسبة الرسوم الجمركية (%)", "label-vat": "نسبة ضريبة القيمة المضافة على الواردات (%)", "btn": "احسب", "r-duty-label": "الرسوم الجمركية", "r-base-label": "أساس الضريبة (القيمة + الرسوم)", "r-vat-label": "ضريبة الواردات", "r-total-label": "التكلفة الإجمالية للاستيراد", "faq-h2": "الأسئلة الشائعة", "faq1-q": "ما هي القيمة الجمركية؟", "faq1-a": "هي عادة السعر المدفوع للبضاعة زائدًا النقل والتأمين حتى حدود الاتحاد الأوروبي (قيمة CIF).", "faq2-q": "كيف أعرف نسبة الرسوم المطبقة؟", "faq2-a": "تعتمد النسبة على الرمز التعريفي للمنتج وبلد المنشأ — راجع قاعدة Taric الأوروبية لمعرفة النسبة الدقيقة.", "faq3-q": "هل يغطي هذا الحساب آلية CBAM أيضًا؟", "faq3-a": "لا، هذا المحاكي يغطي الرسوم الجمركية وضريبة القيمة المضافة العادية. للمنتجات الخاضعة لآلية الكربون على الحدود، استخدم حاسبة CBAM.", "_title": "حاسبة الرسوم الجمركية المجانية | EU CBAM Calculator", "_desc": "قدر الرسوم الجمركية وضريبة القيمة المضافة المستحقة على بضائع تدخل الاتحاد الأوروبي."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
