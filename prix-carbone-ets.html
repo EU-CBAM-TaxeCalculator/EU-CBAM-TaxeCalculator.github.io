@@ -5,127 +5,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculateur de Prix Carbone EU ETS Gratuit | EU CBAM Calculator</title>
-<meta name="description" content="Estime le coût carbone d'une émission de CO2 selon le prix des quotas du système d'échange de quotas d'émission de l'UE (EU ETS).">
+<meta name="description" content="Estime le coût carbone d'une émission de CO2 selon le prix des quotas EU ETS.">
 <link rel="canonical" href="https://maelysbussacm2b-byte.github.io/prix-carbone-ets.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur de Prix Carbone EU ETS","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
-</script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
-    --paper: #ffffff; --card: #eef4f0; --card-border: #d7e5df;
-    --accent: #2f6e52; --accent-dark: #164f3c;
-    --line: #e2e5e9;
-  }
-  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
-  .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
-  .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-  nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
-  nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-  nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .hero { text-align: center; padding: 40px 0 10px; }
-  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-  .lede { color: var(--ink-soft); font-size: 1rem; max-width: 520px; margin: 0 auto; }
-  .tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
-  .row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
-  input { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; width: 100%; }
-  .btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
-  .btn:hover { background: var(--accent-dark); }
-  .result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
-  .result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
-  .result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
-  .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
-  .faq { margin: 44px 0; }
-  .faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
-  .faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
-  .faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
-  footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+  --paper: #ffffff; --card: #eef4f0; --card-border: #d7e5df;
+  --accent: #2f6e52; --accent-dark: #164f3c;
+  --line: #e2e5e9;
+}
+body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+.header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+.logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
+nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
+main { padding: 40px 0 60px; }
+.eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; display: block; }
+h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 16px; }
+h2 { font-size: 1.08rem; font-weight: 700; margin: 26px 0 8px; }
+p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
+.lede { max-width: 540px; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 10px; }
+.tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
+.tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
+.tool-card p { font-size: 0.85rem; margin: 0; }
+.ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
+.card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+.card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
+a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
+footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
+
+.hero { text-align: center; padding: 40px 0 10px; }
+.tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
+.row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
+input { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; width: 100%; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
+.btn:hover { background: var(--accent-dark); }
+.result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
+.result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
+.result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
+.faq { margin: 44px 0; }
+.faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
+.faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">C</span> EU CBAM Calculator</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Calculateur CBAM</a>
-          <a href="/droits-de-douane.html">Droits de Douane</a>
-          <a href="/prix-carbone-ets.html">Prix Carbone ETS</a>
-        </div>
-      </div>
-      <a href="/guides.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Calculateur CBAM</a><a href="/droits-de-douane.html" data-i18n="nav-tool2">Droits de Douane</a><a href="/prix-carbone-ets.html" data-i18n="nav-tool3">Prix Carbone ETS</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
-
 <main class="wrap">
-  <div class="hero">
-    <h1>Calculateur de Prix Carbone EU ETS</h1>
-    <p class="lede">Estime le coût carbone de tes émissions de CO2 selon le prix actuel des quotas EU ETS.</p>
+<div class="hero">
+  <h1 data-i18n="h1">Calculateur de Prix Carbone EU ETS</h1>
+  <p class="lede" data-i18n="lede">Estime le coût carbone de tes émissions de CO2 selon le prix actuel des quotas EU ETS.</p>
+</div>
+<div class="tool-zone">
+  <div class="row"><label data-i18n="label-tonnes">Émissions de CO2 (tonnes)</label><input type="number" id="tonnes" value="100" step="0.1"></div>
+  <div class="row"><label data-i18n="label-price">Prix du quota EU ETS (€/tonne)</label><input type="number" id="price" value="70" step="0.1"></div>
+  <button class="btn" data-i18n="btn" onclick="calc()">Calculer</button>
+  <div class="result-box" id="result" style="display:none;">
+    <div class="line"><span data-i18n="r-tonnes-label">Émissions</span><span id="r-tonnes">—</span></div>
+    <div class="line"><span data-i18n="r-price-label">Prix unitaire</span><span id="r-price">—</span></div>
+    <div class="line total"><span data-i18n="r-total-label">Coût carbone total</span><span id="r-total">—</span></div>
   </div>
-
-  <div class="tool-zone">
-    <div class="row">
-      <label>Émissions de CO2 (tonnes)</label>
-      <input type="number" id="tonnes" value="100" step="0.1">
-    </div>
-    <div class="row">
-      <label>Prix du quota EU ETS (€/tonne)</label>
-      <input type="number" id="price" value="70" step="0.1">
-    </div>
-    <button class="btn" onclick="calc()">Calculer</button>
-    <div class="result-box" id="result" style="display:none;">
-      <div class="line"><span>Émissions</span><span id="r-tonnes">—</span></div>
-      <div class="line"><span>Prix unitaire</span><span id="r-price">—</span></div>
-      <div class="line total"><span>Coût carbone total</span><span id="r-total">—</span></div>
-    </div>
-  </div>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-      <h3>Qu'est-ce que l'EU ETS ?</h3>
-      <p>Le système d'échange de quotas d'émission de l'UE (EU ETS) plafonne les émissions de CO2 des secteurs industriels et impose l'achat d'un quota pour chaque tonne émise au-delà du plafond gratuit.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Quel est le lien avec le CBAM ?</h3>
-      <p>Le CBAM applique aux importations un coût carbone équivalent à celui payé par les producteurs européens sous l'EU ETS, afin d'éviter les fuites de carbone. Utilise notre <a href="/" style="color:var(--accent-dark);">calculateur CBAM</a> pour estimer ce coût sur tes importations.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Le prix du quota est-il fixe ?</h3>
-      <p>Non, il fluctue quotidiennement selon l'offre et la demande sur le marché carbone européen — entre le prix par défaut affiché ici selon l'actualité du marché.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© EU CBAM Calculator</div>
-</footer>
-
+</div>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<section class="faq">
+  <h2 data-i18n="faq-h2">Questions fréquentes</h2>
+  <div class="faq-item"><h3 data-i18n="faq1-q">Qu'est-ce que l'EU ETS&nbsp;?</h3><p data-i18n="faq1-a">Le système d'échange de quotas d'émission de l'UE (EU ETS) plafonne les émissions de CO2 des secteurs industriels et impose l'achat d'un quota pour chaque tonne émise au-delà du plafond gratuit.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq2-q">Quel est le lien avec le CBAM&nbsp;?</h3><p data-i18n="faq2-a">Le CBAM applique aux importations un coût carbone équivalent à celui payé par les producteurs européens sous l'EU ETS, afin d'éviter les fuites de carbone. Utilise notre calculateur CBAM pour estimer ce coût sur tes importations.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq3-q">Le prix du quota est-il fixe&nbsp;?</h3><p data-i18n="faq3-a">Non, il fluctue quotidiennement selon l'offre et la demande sur le marché carbone européen — ajuste le prix par défaut affiché ici selon l'actualité du marché.</p></div>
+</section>
 <script>
 function calc() {
   const tonnes = parseFloat(document.getElementById('tonnes').value) || 0;
@@ -137,5 +109,11 @@ function calc() {
   document.getElementById('result').style.display = 'block';
 }
 </script>
+</main>
+<footer>
+  <div class="wrap">&copy; EU CBAM Calculator</div>
+</footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Calculateur CBAM", "nav-tool2": "Droits de Douane", "nav-tool3": "Prix Carbone ETS", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Calculateur de Prix Carbone EU ETS", "lede": "Estime le coût carbone de tes émissions de CO2 selon le prix actuel des quotas EU ETS.", "label-tonnes": "Émissions de CO2 (tonnes)", "label-price": "Prix du quota EU ETS (€/tonne)", "btn": "Calculer", "r-tonnes-label": "Émissions", "r-price-label": "Prix unitaire", "r-total-label": "Coût carbone total", "faq-h2": "Questions fréquentes", "faq1-q": "Qu'est-ce que l'EU ETS ?", "faq1-a": "Le système d'échange de quotas d'émission de l'UE (EU ETS) plafonne les émissions de CO2 des secteurs industriels et impose l'achat d'un quota pour chaque tonne émise au-delà du plafond gratuit.", "faq2-q": "Quel est le lien avec le CBAM ?", "faq2-a": "Le CBAM applique aux importations un coût carbone équivalent à celui payé par les producteurs européens sous l'EU ETS, afin d'éviter les fuites de carbone. Utilise notre calculateur CBAM pour estimer ce coût sur tes importations.", "faq3-q": "Le prix du quota est-il fixe ?", "faq3-a": "Non, il fluctue quotidiennement selon l'offre et la demande sur le marché carbone européen — ajuste le prix par défaut affiché ici selon l'actualité du marché.", "_title": "Calculateur de Prix Carbone EU ETS Gratuit | EU CBAM Calculator", "_desc": "Estime le coût carbone d'une émission de CO2 selon le prix des quotas EU ETS."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "CBAM Calculator", "nav-tool2": "Customs Duty", "nav-tool3": "ETS Carbon Price", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "EU ETS Carbon Price Calculator", "lede": "Estimates the carbon cost of your CO2 emissions based on the current EU ETS quota price.", "label-tonnes": "CO2 emissions (tonnes)", "label-price": "EU ETS quota price (€/tonne)", "btn": "Calculate", "r-tonnes-label": "Emissions", "r-price-label": "Unit price", "r-total-label": "Total carbon cost", "faq-h2": "Frequently asked questions", "faq1-q": "What is the EU ETS?", "faq1-a": "The EU Emissions Trading System (EU ETS) caps CO2 emissions from industrial sectors and requires buying a quota for every tonne emitted beyond the free allocation.", "faq2-q": "What is the link with CBAM?", "faq2-a": "CBAM applies a carbon cost to imports equivalent to what European producers pay under the EU ETS, to prevent carbon leakage. Use our CBAM calculator to estimate this cost on your imports.", "faq3-q": "Is the quota price fixed?", "faq3-a": "No, it fluctuates daily based on supply and demand in the European carbon market — adjust the default price shown here based on current market conditions.", "_title": "Free EU ETS Carbon Price Calculator | EU CBAM Calculator", "_desc": "Estimate the carbon cost of a CO2 emission based on the EU ETS quota price."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Derechos de Aduana", "nav-tool3": "Precio Carbono ETS", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Calculadora de Precio Carbono EU ETS", "lede": "Estima el coste de carbono de tus emisiones de CO2 según el precio actual de los derechos EU ETS.", "label-tonnes": "Emisiones de CO2 (toneladas)", "label-price": "Precio del derecho EU ETS (€/tonelada)", "btn": "Calcular", "r-tonnes-label": "Emisiones", "r-price-label": "Precio unitario", "r-total-label": "Coste de carbono total", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Qué es el EU ETS?", "faq1-a": "El sistema de comercio de derechos de emisión de la UE (EU ETS) limita las emisiones de CO2 de los sectores industriales y exige comprar un derecho por cada tonelada emitida más allá de la asignación gratuita.", "faq2-q": "¿Cuál es la relación con el CBAM?", "faq2-a": "El CBAM aplica a las importaciones un coste de carbono equivalente al que pagan los productores europeos bajo el EU ETS, para evitar la fuga de carbono. Usa nuestra calculadora CBAM para estimar este coste en tus importaciones.", "faq3-q": "¿El precio del derecho es fijo?", "faq3-a": "No, fluctúa diariamente según la oferta y la demanda en el mercado europeo del carbono — ajusta el precio predeterminado mostrado aquí según la actualidad del mercado.", "_title": "Calculadora Gratuita de Precio Carbono EU ETS | EU CBAM Calculator", "_desc": "Estima el coste de carbono de una emisión de CO2 según el precio de los derechos EU ETS."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Direitos Alfandegários", "nav-tool3": "Preço Carbono ETS", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Calculadora de Preço Carbono EU ETS", "lede": "Estima o custo de carbono das suas emissões de CO2 com base no preço atual das licenças EU ETS.", "label-tonnes": "Emissões de CO2 (toneladas)", "label-price": "Preço da licença EU ETS (€/tonelada)", "btn": "Calcular", "r-tonnes-label": "Emissões", "r-price-label": "Preço unitário", "r-total-label": "Custo de carbono total", "faq-h2": "Perguntas frequentes", "faq1-q": "O que é o EU ETS?", "faq1-a": "O sistema de comércio de licenças de emissão da UE (EU ETS) limita as emissões de CO2 dos setores industriais e exige a compra de uma licença para cada tonelada emitida além da alocação gratuita.", "faq2-q": "Qual é a relação com o CBAM?", "faq2-a": "O CBAM aplica às importações um custo de carbono equivalente ao pago pelos produtores europeus sob o EU ETS, para evitar a fuga de carbono. Use nossa calculadora CBAM para estimar esse custo nas suas importações.", "faq3-q": "O preço da licença é fixo?", "faq3-a": "Não, ele flutua diariamente conforme a oferta e a procura no mercado europeu de carbono — ajuste o preço padrão mostrado aqui conforme a atualidade do mercado.", "_title": "Calculadora Gratuita de Preço Carbono EU ETS | EU CBAM Calculator", "_desc": "Estime o custo de carbono de uma emissão de CO2 com base no preço das licenças EU ETS."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "CBAM कैलकुलेटर", "nav-tool2": "सीमा शुल्क", "nav-tool3": "ETS कार्बन मूल्य", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "EU ETS कार्बन मूल्य कैलकुलेटर", "lede": "वर्तमान EU ETS कोटा मूल्य के आधार पर आपके CO2 उत्सर्जन की कार्बन लागत का अनुमान लगाता है।", "label-tonnes": "CO2 उत्सर्जन (टन)", "label-price": "EU ETS कोटा मूल्य (€/टन)", "btn": "गणना करें", "r-tonnes-label": "उत्सर्जन", "r-price-label": "इकाई मूल्य", "r-total-label": "कुल कार्बन लागत", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "EU ETS क्या है?", "faq1-a": "EU उत्सर्जन ट्रेडिंग सिस्टम (EU ETS) औद्योगिक क्षेत्रों के CO2 उत्सर्जन को सीमित करता है और मुफ़्त आवंटन से अधिक हर टन उत्सर्जन के लिए कोटा खरीदना अनिवार्य बनाता है।", "faq2-q": "CBAM से क्या संबंध है?", "faq2-a": "CBAM आयात पर उतनी ही कार्बन लागत लगाता है जितनी यूरोपीय उत्पादक EU ETS के तहत चुकाते हैं, ताकि कार्बन रिसाव से बचा जा सके। अपने आयात पर यह लागत जानने के लिए हमारा CBAM कैलकुलेटर उपयोग करें।", "faq3-q": "क्या कोटा मूल्य निश्चित है?", "faq3-a": "नहीं, यूरोपीय कार्बन बाजार में आपूर्ति और मांग के आधार पर यह रोज़ाना बदलता है — बाजार की स्थिति के अनुसार यहां दिखाया गया डिफ़ॉल्ट मूल्य समायोजित करें।", "_title": "मुफ़्त EU ETS कार्बन मूल्य कैलकुलेटर | EU CBAM Calculator", "_desc": "EU ETS कोटा मूल्य के आधार पर CO2 उत्सर्जन की कार्बन लागत का अनुमान लगाएं।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "حاسبة CBAM", "nav-tool2": "الرسوم الجمركية", "nav-tool3": "سعر الكربون ETS", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "حاسبة سعر الكربون EU ETS", "lede": "تقدر تكلفة الكربون لانبعاثاتك من CO2 بناءً على السعر الحالي لحصص EU ETS.", "label-tonnes": "انبعاثات CO2 (طن)", "label-price": "سعر حصة EU ETS (€/طن)", "btn": "احسب", "r-tonnes-label": "الانبعاثات", "r-price-label": "سعر الوحدة", "r-total-label": "إجمالي تكلفة الكربون", "faq-h2": "الأسئلة الشائعة", "faq1-q": "ما هو EU ETS؟", "faq1-a": "نظام الاتحاد الأوروبي لتداول حصص الانبعاثات (EU ETS) يضع سقفًا لانبعاثات CO2 من القطاعات الصناعية ويفرض شراء حصة عن كل طن يُنبعث فوق المخصصات المجانية.", "faq2-q": "ما العلاقة بـ CBAM؟", "faq2-a": "تفرض CBAM على الواردات تكلفة كربون تعادل ما يدفعه المنتجون الأوروبيون بموجب EU ETS، لمنع تسرب الكربون. استخدم حاسبة CBAM لتقدير هذه التكلفة على وارداتك.", "faq3-q": "هل سعر الحصة ثابت؟", "faq3-a": "لا، يتذبذب يوميًا حسب العرض والطلب في سوق الكربون الأوروبي — عدّل السعر الافتراضي المعروض هنا وفقًا لوضع السوق الحالي.", "_title": "حاسبة سعر الكربون EU ETS المجانية | EU CBAM Calculator", "_desc": "قدّر تكلفة الكربون لانبعاث من CO2 بناءً على سعر حصص EU ETS."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
