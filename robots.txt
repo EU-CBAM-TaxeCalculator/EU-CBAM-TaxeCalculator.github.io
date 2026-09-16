@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maelysbussacm2b-byte.github.io/sitemap.xml
