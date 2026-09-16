@@ -800,6 +800,9 @@
         <div class="lang-selector-group">
             <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
             <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+            <button class="lang-btn" onclick="setLanguage('hi')">HI</button>
+            <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
             <button class="lang-btn" onclick="setLanguage('de')">DE</button>
             <button class="lang-btn" onclick="setLanguage('es')">ES</button>
             <button class="lang-btn" onclick="setLanguage('it')">IT</button>
@@ -1341,6 +1344,42 @@
                 tab_benchmark: "🔍 Database Codici HS",
                 tab_timeline: "📅 Tempistiche Ufficiali",
                 tab_faq: "❓ Domande Frequenti"
+            },
+            pt: {
+                            "hero_title": "Calculadora de Taxa de Carbono UE & Certificados CBAM",
+                            "hero_desc": "Estime em tempo real o custo financeiro dos seus certificados CBAM na importação. Ferramenta em conformidade com as regras de emissões diretas e indiretas incorporadas da União Europeia.",
+                            "sector_lbl": "Setor CBAM",
+                            "product_lbl": "Produto e Benchmark de Referência",
+                            "volume_lbl": "Volume de Importação Anual",
+                            "total_cbam_lbl": "Custo dos Certificados CBAM",
+                            "tab_calc": "📊 Simulador CBAM",
+                            "tab_benchmark": "🔍 Base de Dados Códigos SH & Fatores",
+                            "tab_timeline": "📅 Calendário & Obrigações Legais",
+                            "tab_faq": "❓ FAQ & Guias de Especialistas"
+            },
+            hi: {
+                            "hero_title": "यूरोपीय कार्बन टैक्स और CBAM प्रमाणपत्र कैलकुलेटर",
+                            "hero_desc": "आयात पर आपके CBAM प्रमाणपत्रों की वित्तीय लागत का रीयल-टाइम अनुमान लगाएं। यूरोपीय संघ के प्रत्यक्ष और अप्रत्यक्ष उत्सर्जन नियमों के अनुरूप उपकरण।",
+                            "sector_lbl": "CBAM क्षेत्र",
+                            "product_lbl": "उत्पाद और संदर्भ बेंचमार्क",
+                            "volume_lbl": "वार्षिक आयात मात्रा",
+                            "total_cbam_lbl": "CBAM प्रमाणपत्र लागत",
+                            "tab_calc": "📊 CBAM सिमुलेटर",
+                            "tab_benchmark": "🔍 SH कोड और कारक डेटाबेस",
+                            "tab_timeline": "📅 समय-सारिणी और कानूनी दायित्व",
+                            "tab_faq": "❓ FAQ और विशेषज्ञ गाइड"
+            },
+            ar: {
+                            "hero_title": "حاسبة ضريبة الكربون الأوروبية وشهادات CBAM",
+                            "hero_desc": "قدّر فوريًا التكلفة المالية لشهادات CBAM عند الاستيراد. أداة متوافقة مع قواعد الاتحاد الأوروبي للانبعاثات المباشرة وغير المباشرة المتضمّنة.",
+                            "sector_lbl": "قطاع CBAM",
+                            "product_lbl": "المنتج والمعيار المرجعي",
+                            "volume_lbl": "حجم الاستيراد السنوي",
+                            "total_cbam_lbl": "تكلفة شهادات CBAM",
+                            "tab_calc": "📊 محاكي CBAM",
+                            "tab_benchmark": "🔍 قاعدة بيانات رموز SH والعوامل",
+                            "tab_timeline": "📅 الجدول الزمني والالتزامات القانونية",
+                            "tab_faq": "❓ الأسئلة الشائعة وأدلة الخبراء"
             }
         };
 
@@ -1354,6 +1393,7 @@
 
         function setLanguage(lang) {
             currentLang = lang;
+            try { localStorage.setItem('site_lang', lang); } catch (e) {}
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
             });
@@ -1366,8 +1406,20 @@
             document.getElementById('tab-btn-timeline').textContent = dict.tab_timeline;
             document.getElementById('tab-btn-faq').textContent = dict.tab_faq;
 
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+            if (dict._title) document.title = dict._title;
+            const descEl = document.querySelector('meta[name="description"]');
+            if (descEl && dict._desc) descEl.setAttribute('content', dict._desc);
+
             onSectorChange();
         }
+
+        (function() {
+            var saved = 'fr';
+            try { saved = localStorage.getItem('site_lang') || 'fr'; } catch (e) {}
+            if (saved !== 'fr' && I18N[saved]) { setTimeout(function(){ setLanguage(saved); }, 0); }
+        })();
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
