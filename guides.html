@@ -4,8 +4,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6908762187006482" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comprendre le CBAM (MACF) : Guide Complet 2026</title>
-<meta name="description" content="Comment fonctionne le Mécanisme d'Ajustement Carbone aux Frontières de l'Union Européenne, qui est concerné, et comment sont calculés les certificats.">
+<title>Guide : Comprendre le CBAM | EU CBAM Calculator</title>
+<meta name="description" content="Qui est concerné par le CBAM, comment son coût est calculé, et ce que ce guide ne remplace pas.">
 <link rel="canonical" href="https://maelysbussacm2b-byte.github.io/guides.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +19,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -37,48 +37,46 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">C</span> EU CBAM Calculator</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Calculateur CBAM</a><a href="/droits-de-douane.html">Droits de Douane</a><a href="/prix-carbone-ets.html">Prix Carbone ETS</a></div></div><a href="/guides.html" class="active">Guides</a><a href="/blog.html">Blog</a><a href="/about.html">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Calculateur CBAM</a><a href="/droits-de-douane.html" data-i18n="nav-tool2">Droits de Douane</a><a href="/prix-carbone-ets.html" data-i18n="nav-tool3">Prix Carbone ETS</a></div></div><a href="/guides.html" data-i18n="nav-guides" class="active">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <h1>Comprendre le CBAM&nbsp;: guide complet</h1>
-  <p>Le Mécanisme d'Ajustement Carbone aux Frontières (CBAM, ou MACF en français) est le dispositif de l'Union Européenne qui applique un coût carbone aux produits importés dans certains secteurs à forte intensité d'émissions.</p>
-
-  <h2>Qui est concerné ?</h2>
-  <p>Les importateurs européens de produits relevant des secteurs couverts&nbsp;: acier, aluminium, ciment, engrais, hydrogène et électricité. Si votre entreprise importe l'un de ces produits dans l'UE, une déclaration CBAM est obligatoire.</p>
-
-  <h2>Comment le coût est-il calculé ?</h2>
-  <p>Le coût dépend des émissions directes et indirectes incorporées dans le produit importé, comparées au prix du carbone déjà payé (le cas échéant) dans le pays d'origine, et rapprochées du prix du quota carbone européen (EU ETS).</p>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <h2>Ce que ce guide ne remplace pas</h2>
-  <p>Cette explication et l'outil de calcul associé sont fournis à titre indicatif. Pour une déclaration officielle, appuyez-vous sur un déclarant en douane ou un expert-comptable spécialisé.</p>
-
-  <p><a class="cta" href="/">Utiliser le calculateur</a></p>
+<h1 data-i18n="h1">Comprendre le CBAM&nbsp;: guide complet</h1>
+<p data-i18n="intro">Le Mécanisme d'Ajustement Carbone aux Frontières (CBAM, ou MACF en français) est le dispositif de l'Union Européenne qui applique un coût carbone aux produits importés dans certains secteurs à forte intensité d'émissions.</p>
+<h2 data-i18n="h2-1">Qui est concerné&nbsp;?</h2>
+<p data-i18n="p1">Les importateurs européens de produits relevant des secteurs couverts&nbsp;: acier, aluminium, ciment, engrais, hydrogène et électricité. Si votre entreprise importe l'un de ces produits dans l'UE, une déclaration CBAM est obligatoire.</p>
+<h2 data-i18n="h2-2">Comment le coût est-il calculé&nbsp;?</h2>
+<p data-i18n="p2">Le coût dépend des émissions directes et indirectes incorporées dans le produit importé, comparées au prix du carbone déjà payé (le cas échéant) dans le pays d'origine, et rapprochées du prix du quota carbone européen (EU ETS).</p>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<h2 data-i18n="h2-3">Ce que ce guide ne remplace pas</h2>
+<p data-i18n="p3">Cette explication et l'outil de calcul associé sont fournis à titre indicatif. Pour une déclaration officielle, appuyez-vous sur un déclarant en douane ou un expert-comptable spécialisé.</p>
+<p><a class="cta" href="/" data-i18n="cta">Utiliser le calculateur</a></p>
 </main>
 <footer>
-  <div class="wrap">© EU CBAM Calculator</div>
+  <div class="wrap">&copy; EU CBAM Calculator</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Calculateur CBAM", "nav-tool2": "Droits de Douane", "nav-tool3": "Prix Carbone ETS", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Comprendre le CBAM : guide complet", "intro": "Le Mécanisme d'Ajustement Carbone aux Frontières (CBAM, ou MACF en français) est le dispositif de l'Union Européenne qui applique un coût carbone aux produits importés dans certains secteurs à forte intensité d'émissions.", "h2-1": "Qui est concerné ?", "p1": "Les importateurs européens de produits relevant des secteurs couverts : acier, aluminium, ciment, engrais, hydrogène et électricité. Si votre entreprise importe l'un de ces produits dans l'UE, une déclaration CBAM est obligatoire.", "h2-2": "Comment le coût est-il calculé ?", "p2": "Le coût dépend des émissions directes et indirectes incorporées dans le produit importé, comparées au prix du carbone déjà payé (le cas échéant) dans le pays d'origine, et rapprochées du prix du quota carbone européen (EU ETS).", "h2-3": "Ce que ce guide ne remplace pas", "p3": "Cette explication et l'outil de calcul associé sont fournis à titre indicatif. Pour une déclaration officielle, appuyez-vous sur un déclarant en douane ou un expert-comptable spécialisé.", "cta": "Utiliser le calculateur", "_title": "Guide : Comprendre le CBAM | EU CBAM Calculator", "_desc": "Qui est concerné par le CBAM, comment son coût est calculé, et ce que ce guide ne remplace pas."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "CBAM Calculator", "nav-tool2": "Customs Duty", "nav-tool3": "ETS Carbon Price", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Understanding CBAM: The Complete Guide", "intro": "The Carbon Border Adjustment Mechanism (CBAM) is the European Union's mechanism that applies a carbon cost to products imported in certain high-emission sectors.", "h2-1": "Who is affected?", "p1": "European importers of products from the covered sectors: steel, aluminium, cement, fertilizers, hydrogen and electricity. If your company imports any of these products into the EU, a CBAM declaration is mandatory.", "h2-2": "How is the cost calculated?", "p2": "The cost depends on the direct and indirect emissions embedded in the imported product, compared against any carbon price already paid in the country of origin, and benchmarked against the EU's own carbon quota price (EU ETS).", "h2-3": "What this guide doesn't replace", "p3": "This explanation and the associated calculator are provided for guidance only. For an official declaration, rely on a customs agent or a specialized accountant.", "cta": "Use the calculator", "_title": "Guide: Understanding CBAM | EU CBAM Calculator", "_desc": "Who's affected by CBAM, how its cost is calculated, and what this guide doesn't replace."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Derechos de Aduana", "nav-tool3": "Precio Carbono ETS", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Entender el CBAM: la guía completa", "intro": "El Mecanismo de Ajuste en Frontera por Carbono (CBAM) es el dispositivo de la Unión Europea que aplica un coste de carbono a los productos importados en ciertos sectores de alta emisión.", "h2-1": "¿A quién afecta?", "p1": "A los importadores europeos de productos de los sectores cubiertos: acero, aluminio, cemento, fertilizantes, hidrógeno y electricidad. Si tu empresa importa alguno de estos productos a la UE, la declaración CBAM es obligatoria.", "h2-2": "¿Cómo se calcula el coste?", "p2": "El coste depende de las emisiones directas e indirectas incorporadas en el producto importado, comparadas con el precio del carbono ya pagado (si aplica) en el país de origen, y confrontadas con el precio del derecho de emisión europeo (EU ETS).", "h2-3": "Lo que esta guía no sustituye", "p3": "Esta explicación y la calculadora asociada se ofrecen a título indicativo. Para una declaración oficial, acúdete a un agente de aduanas o a un contable especializado.", "cta": "Usar la calculadora", "_title": "Guía: Entender el CBAM | EU CBAM Calculator", "_desc": "Quién está afectado por el CBAM, cómo se calcula su coste, y lo que esta guía no sustituye."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Calculadora CBAM", "nav-tool2": "Direitos Alfandegários", "nav-tool3": "Preço Carbono ETS", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Entender o CBAM: o guia completo", "intro": "O Mecanismo de Ajuste de Fronteira de Carbono (CBAM) é o dispositivo da União Europeia que aplica um custo de carbono a produtos importados em certos setores de alta emissão.", "h2-1": "Quem é afetado?", "p1": "Importadores europeus de produtos dos setores abrangidos: aço, alumínio, cimento, fertilizantes, hidrogênio e eletricidade. Se sua empresa importa qualquer um desses produtos para a UE, a declaração CBAM é obrigatória.", "h2-2": "Como o custo é calculado?", "p2": "O custo depende das emissões diretas e indiretas incorporadas no produto importado, comparadas com qualquer preço de carbono já pago no país de origem, e confrontadas com o preço da licença de carbono europeia (EU ETS).", "h2-3": "O que este guia não substitui", "p3": "Esta explicação e a calculadora associada são fornecidas apenas a título indicativo. Para uma declaração oficial, recorra a um despachante aduaneiro ou contador especializado.", "cta": "Usar a calculadora", "_title": "Guia: Entender o CBAM | EU CBAM Calculator", "_desc": "Quem é afetado pelo CBAM, como o custo é calculado, e o que este guia não substitui."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "CBAM कैलकुलेटर", "nav-tool2": "सीमा शुल्क", "nav-tool3": "ETS कार्बन मूल्य", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "CBAM को समझें: पूर्ण गाइड", "intro": "कार्बन बॉर्डर एडजस्टमेंट मैकेनिज्म (CBAM) यूरोपीय संघ का वह तंत्र है जो कुछ उच्च-उत्सर्जन क्षेत्रों में आयातित उत्पादों पर कार्बन लागत लागू करता है।", "h2-1": "कौन प्रभावित है?", "p1": "आच्छादित क्षेत्रों के उत्पादों के यूरोपीय आयातकर्ता: स्टील, एल्यूमिनियम, सीमेंट, उर्वरक, हाइड्रोजन और बिजली। यदि आपकी कंपनी इनमें से कोई भी उत्पाद ईयू में आयात करती है, तो CBAM घोषणा अनिवार्य है।", "h2-2": "लागत की गणना कैसे होती है?", "p2": "लागत आयातित उत्पाद में निहित प्रत्यक्ष और अप्रत्यक्ष उत्सर्जन पर निर्भर करती है, स्रोत देश में पहले से चुकाई गई किसी कार्बन कीमत की तुलना में, और EU ETS के कोटा मूल्य से मिलान कर तुलना जाता है।", "h2-3": "यह गाइड क्या नहीं है", "p3": "यह स्पष्टीकरण और संबंधित कैलकुलेटर केवल संकेत के रूप में दिए गए हैं। आधिकारिक घोषणा के लिए, कस्टम्स घोषणाकर्ता या विशेषज्ञ लेखाकार से सलाह लें।", "cta": "कैलकुलेटर का उपयोग करें", "_title": "गाइड: CBAM को समझें | EU CBAM Calculator", "_desc": "CBAM से कौन प्रभावित है, लागत की गणना कैसे होती है, और यह गाइड क्या नहीं है।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "حاسبة CBAM", "nav-tool2": "الرسوم الجمركية", "nav-tool3": "سعر الكربون ETS", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "فهم آلية CBAM: الدليل الشامل", "intro": "آلية تعديل الكربون على الحدود (CBAM) هي آلية الاتحاد الأوروبي التي تفرض تكلفة كربون على المنتجات المستوردة في قطاعات معينة عالية الانبعاثات.", "h2-1": "من المعني؟", "p1": "المستوردون الأوروبيون لمنتجات القطاعات المشمولة: الصلب، الألمنيوم، الأسمنت، الأسمدة، الهيدروجين والكهرباء. إذا كانت شركتك تستورد أيًا من هذه المنتجات إلى الاتحاد الأوروبي، فإقرار CBAM إلزامي.", "h2-2": "كيف تُحسب التكلفة؟", "p2": "تعتمد التكلفة على الانبعاثات المباشرة وغير المباشرة المتضمّنة في المنتج المستورد، مقارنة بأي سعر كربون مدفوع بالفعل في بلد المنشأ، ومقارنة بسعر حصة الكربون الأوروبي (EU ETS).", "h2-3": "ما لا يغني عنه هذا الدليل", "p3": "يُقدّم هذا الشرح والحاسبة المرتبطة به للاسترشاد فقط. للحصول على إقرار رسمي، استعن بمخلص جمركي أو محاسب متخصص.", "cta": "استخدم الحاسبة", "_title": "دليل: فهم CBAM | EU CBAM Calculator", "_desc": "من المعني بـ CBAM، وكيفية حساب تكلفته، وما لا يغني عنه هذا الدليل."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
