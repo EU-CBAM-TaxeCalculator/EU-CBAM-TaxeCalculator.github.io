@@ -785,7 +785,13 @@
         </div>
         <nav style="display:flex;gap:16px;margin-left:20px;">
             <a href="/" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">Home</a>
-            <a href="/tools.html" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">Free Tools</a>
+            <span style="position:relative;" onmouseenter="this.querySelector('.ddp').style.display='block'" onmouseleave="this.querySelector('.ddp').style.display='none'">
+  <a href="/tools.html" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">Free Tools ▾</a>
+  <div class="ddp" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border-color);border-radius:10px;padding:6px;min-width:190px;box-shadow:0 10px 28px rgba(0,0,0,0.12);z-index:30;margin-top:6px;">
+    <a href="/" style="display:block;padding:8px 10px;color:var(--text-primary);text-decoration:none;font-size:0.85rem;border-radius:6px;">Calculateur CBAM</a>
+    <div style="padding:8px 10px;color:var(--text-muted);font-size:0.78rem;font-style:italic;">Plus d'outils bientôt</div>
+  </div>
+</span>
             <a href="/guides.html" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">Guides</a>
             <a href="/blog.html" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">Blog</a>
             <a href="/about.html" style="color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:600;">About</a>
